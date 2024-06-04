@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingles</title>
+</head>
+<style>
+    .ingles {
+        font-size: 20px;
+    }
+    
+    .traduccion {
+        font-size: 20px;
+    }
+    
+    body {
+        color: rgb(255, 255, 255);
+        background-image: url(im1.jfif);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: rgb(243, 204, 241);
+    }
+    
+    .slider-container {
+        width: 100;
+        overflow: hidden;
+    }
+    
+    .slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+    
+    .slider img {
+        width: 35%;
+        height: auto;
+    }
+    button{
+        padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const slider = document.querySelector('.slider');
+        const slides = document.querySelectorAll('.slider img');
+        let index = 0;
+        const slideWidth = slides[0].clientWidth;
+        const totalSlides = slides.length;
+
+        function nextSlide() {
+            index = (index + 1) % totalSlides;
+            updateSlide();
+        }
+
+        function updateSlide() {
+            slider.style.transform = `translateX(-${index * slideWidth}px)`;
+        }
+
+        setInterval(nextSlide, 1000);
+    });
+</script>
+
+<body>
+    <div class="slider-container">
+        <div class="slider">
+            <img src="Ingles1.jfif" alt="imagen1">
+            <img src="Ingles2.jfif" alt="imagen2">
+            <img src="Ingles3.jfif" alt="imagen3">
+            <img src="Ingles4.jfif" alt="imagen4">
+            <img src="Ingles5.jfif" alt="imagen5">
+            <img src="Imagen 6.png" alt="imagen6">
+        </div>
+    </div>
+    <ul>
+        <button><a href="Proyecto.html">inicio</a></button>
+    </ul>
+    <h2>Ingles</h2>
+    <h2>RENEWABLE ENERGY (Energias renovables)</h2>
+    <div class="ingles">
+        <p>What are renewable energies?</p>
+        <p>Renewable energies are those sources of energy that are obtained from natural resources that are inexhaustible or that are They regenerate quickly in nature. These include solar, wind, hydroelectric, geothermal, and biomass energy. The main characteristic
+            of renewable energies is that they are not depleted with their use and, therefore, they are considered more sustainable. in the long term compared to fossil fuels, which are finite and contribute to climate change. The capture and use of These
+            forms of renewable energy may also have a lower environmental impact in terms of greenhouse gas emissions. and other pollutants compared to conventional energy sources.</p>
+        <p>Types of renewable energy and how they work</p>
+        <p>1-Solar Energy: This comes from the sun and can be captured and converted into electricity through photovoltaic solar panels or into heat through solar thermal collectors. It is a very versatile and abundant source of energy, especially in regions
+            with high levels of solar radiation.</p>
+        <p>2-Wind Energy: It is generated from the wind. Wind turbines capture the kinetic energy of the wind and convert it into electricity. Wind energy is one of the fastest growing renewable energy sources in the world and It can be used both on land
+            and in marine installations.</p>
+        <p>3-Hydroelectric Energy: It is obtained from the movement of water, generally by building dams and capturing the kinetic energy of moving water. Hydroelectric plants can be large scale, such as dams, or small scale, such as turbines installed in
+            rivers.
+        </p>
+        <p>4-Geothermal Energy: This comes from the heat generated inside the Earth. It can be harnessed by drilling geothermal wells to capture steam or hot underground water and use it to generate electricity or provide direct heating.</p>
+        <p>5-Biomass Energy: It is derived from the processing of organic matter, such as agricultural waste, forestry waste, municipal organic waste and energy crops, to produce biogas, liquid or solid biofuels, and heat. The Biomass is a versatile renewable
+            energy source that can be used to generate electricity, heating and fuel for vehicles.</p>
+        <p>These are just a few of the main forms of renewable energy, and each has its own advantages and challenges. The transition towards greater use of renewable energy is essential to reduce greenhouse gas emissions. greenhouse effect and mitigate
+            climate change.</p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fisica</title>
+</head>
+<style>
+    body {
+        color: white;
+        background-image: url(im1.jfif);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    
+    .slider-container {
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+    
+    .slider img {
+        width: 20%;
+        height: auto;
+    }
+    button{
+        padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const slider = document.querySelector('.slider');
+        const slides = document.querySelectorAll('.slider img');
+        let index = 0;
+        const slideWidth = slides[0].clientWidth;
+        const totalSlides = slides.length;
+
+        function nextSlide() {
+            index = (index + 1) % totalSlides;
+            updateSlide();
+        }
+
+        function updateSlide() {
+            slider.style.transform = `translateX(-${index * slideWidth}px)`;
+        }
+
+        setInterval(nextSlide, 1000);
+    });
+</script>
+
+<body>
+    <div class="slider-container">
+        <div class="slider">
+            <img src="Fisica1.png" alt="imagen1">
+            <img src="Fisica2.jpg" alt="imagen2">
+            <img src="Fisica3.avif" alt="imagen3">
+            <img src="Fisica4.webp" alt="imagen4">
+            <img src="Fisica5.avif" alt="imagen5">
+            <img src="Fisica6.avif" alt="imagen6">
+            <img src="Fisica7.jfif" alt="imagen6">
+        </div>
+    </div>
+    <h2>Fisica</h2>
+    <button><a href="Proyecto.html">inicio</a></button>
+    <h3>Energia calorifica</h3>
+    <p>Que es la energia calorifica</p>
+    <p>La energía térmica o también conocida como energía calórica o calorífica, es aquella energía contenida en un sistema y que es responsable de su temperatura, sea frío o calor. Es también la energía liberada por cualquier elemento en forma de calor.</p>
+    <p>Para que sirve la energia calorifica</p>
+    <p>Principalmente consiste en acumular la energía térmica proveniente del sol para utilizarla en diferentes fines como, por ejemplo, calentar líquidos y gases, aprovechando la energía térmica para proporcionar calefacción, refrigeración o agua caliente
+        sanitaria al hogar.</p>
+    <p>Como puedo obtener energia calorifica</p>
+    <p>Esta energía puede obtenerse de múltiples maneras. Por ejemplo, de forma natural (gracias al sol) o de forma artificial (debido a combustibles como el petróleo, el gas o el carbón; o la electricidad). Es decir, que la energía calórica o térmica puede
+        obtenerse de otras formas de energía como por ejemplo la energía eléctrica (calefacción) o reacciones químicas (como por ejemplo la combustión).</p>
+    <h3>Energia electrica</h3>
+    <p>¿Qué es la energía eléctrica?</p>
+    <p>La energía eléctrica es aquella que se origina de la diferencia de potencial eléctrico entre dos puntos determinados, que se ponen en contacto a través de un transmisor eléctrico. Este contacto genera una corriente eléctrica basada en la transmisión
+        de cargas negativas (llamadas, más comúnmente, electrones) hasta su punto de consumo.</p>
+    <p>para que sirve la energia electrica</p>
+    <p>En el hogar, en los servicios, en la industria o, incluso, en el transporte, la energía eléctrica tiene un amplio abanico de aplicaciones. Con la electricidad, se puede iluminar, obtener calor y frío, calentar agua, cocinar, o poner en marcha un aparato.</p>
+    <p>como se obtiene la energia electrica</p>
+    <p>Existen dos formas de obtener electricidad:</p>
+    <p>A partir de fuentes de energía primarias renovables, como el viento, la radiación solar o las mareas.</p>
+    <p>O a partir de fuentes de energía primarias no renovables como el carbón, el gas natural, el petróleo o la energía nuclear.</p>
+    <h3>Energia Quimica</h3>
+    <p>¿Que se la energía química?</p>
+    <p>La energía química se manifiesta en determinadas reacciones químicas en las que se forman o rompen enlaces químicos. El carbón, el gas natural o el funcionamiento de las baterías son algunos ejemplos del uso de esta energía.</p>
+    <p>¿Cómo se obtiene la energía química?</p>
+    <p>La energía química puede liberarse durante una reacción química, a menudo en forma de calor. Tales reacciones se denominan exotérmicas. Las reacciones que requieren una entrada de calor para continuar pueden almacenar algo de esa energía bajo su compuesto
+        químico en enlaces recién formados.</p>
+    <p>para que sirve la energia quimica</p>
+    <p>Además, la energía química es una forma de energía potencial que sirve para ser transformada en otras formas de energía que tienen aplicaciones prácticas en la vida humana, como energía lumínica, térmica, cinética, etc., para llevar a cabo un trabajo.</p>
+    <h3>Energia hidraulica</h3>
+    <p>que es la energía hidráulica</p>
+    <p>Energía hidráulica, energía hídrica o hidroenergía es aquella que se obtiene a partir del aprovechamiento de las energías cinéticas y potenciales de la corriente del agua, saltos de agua o mareas. Se puede transformar a diferentes escalas</p>
+    <p>como se obtiene la energia hidraulica</p>
+    <p>Su obtención se debe al aprovechamiento de la energía cinética y potencial de los saltos de agua o corrientes. El propio movimiento del agua hace girar una turbina, que está conectada a un transformador, produce la energía eléctrica
+    </p>
+    <p>para que sirve la energia hidraulica</p>
+    <p>La energía hidráulica, también conocida como hidroeléctrica, aprovecha la fuerza del agua en movimiento para producir electricidad. El uso de recursos hídricos como fuente de energía es una práctica ancestral.</p>
+    <h3>Energia eolica</h3>
+    <p>que es la energia eolica</p>
+    <p>La energía eólica es la energía que se obtiene a partir del viento, es decir, es el aprovechamiento de la energía cinética de las masas de aire. El término «eólico» proviene del latín aeolicus, o ‘perteneciente o relativo a Eolo’, dios de los vientos
+        en la mitología griega</p>
+    <p>como se obtiene la energia eolica</p>
+    <p>A través de un aerogenerador que transforma la energía cinética de las corrientes de aire en energía eléctrica. El proceso de extracción se realiza principalmente gracias al rotor, que transforma la energía cinética en energía mecánica, y al generador,
+        que transforma dicha energía mecánica en eléctrica.</p>
+    <p>para que sirve la energia eollica</p>
+    <p>La energía eólica se utiliza para producir la corriente eléctrica continua que se necesita para producir el hidrógeno renovable. Este tipo de hidrógeno se utiliza, por ejemplo, para producir los combustibles renovables.</p>
+    <h3>Energia radiante</h3>
+    <p>que es la energia radiante</p>
+    <p>En física, y en particular medida por radiometría, la energía radiante es la energía de la radiación electromagnética y gravitacional. Como energía, su unidad SI es el joule. La cantidad de energía radiante puede calcularse integrando el flujo radiante
+        con respecto al tiempo.</p>
+    <p>como se obtiene la energia radiante</p>
+    <p>La energía radiante se genera u obtiene a partir de las ondas electromagnéticas, como la luz visible, las ondas de radio y los rayos. Es un tipo de energía que se puede obtener sin necesidad de un material de soporte. También se obtiene por medio
+        de pulsos electromagnéticos solares.</p>
+    <h3>Energia nuclear</h3>
+    <p>que es la energia nuclear</p>
+    <p>La energía nuclear es la que se libera espontánea o artificialmente en las reacciones nucleares. Sin embargo, este término engloba otro significado que es el aprovechamiento de dicha energía para otros fines, tales como la obtención de energía eléctrica,
+        térmica y mecánica a partir de reacciones atómicas</p>
+    <p>como se obtiene la energia nuclear</p>
+    <p>Ésta energía se puede obtener de dos formas: fusión nuclear y fisión nuclear. En la fusión nuclear, la energía se libera cuando los núcleos de los átomos se combinan o se fusionan entre sí para formar un núcleo más grande. Así es como el sol produce
+        energía.</p>
+    <p>para que sirve la energia nuclear</p>
+    <p>La energía nuclear es la energía que mantiene unidos neutrones y protones. La energía nuclear se puede utilizar para producir electricidad. Pero primero la energía debe ser liberada. Ésta energía se puede obtener de dos formas: fusión nuclear y fisión
+        nuclear.</p>
+
+</body>
+
+</html>

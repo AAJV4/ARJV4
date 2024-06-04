@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo</title>
+</head>
+<style>
+    .slider-container {
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+    
+    .slider img {
+        width: 35%;
+        height: auto;
+    }
+</style>
+<style>
+    body {
+        color: white;
+        background-image: url(im1.jfif);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0;
+        padding: 20px;
+    }
+    
+    .bar-chart {
+        width: 80%;
+        max-width: 800px;
+    }
+    
+    .bar {
+        display: flex;
+        align-items: center;
+        margin: 10px 0;
+    }
+    
+    .bar-label {
+        width: 150px;
+        text-align: right;
+        margin-right: 10px;
+    }
+    
+    .bar-value {
+        height: 30px;
+        background-color: #76b5c5;
+        text-align: right;
+        padding-right: 5px;
+        color: white;
+        display: flex;
+        align-items: center;
+    }
+    button{
+        padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const slider = document.querySelector('.slider');
+        const slides = document.querySelectorAll('.slider img');
+        let index = 0;
+        const slideWidth = slides[0].clientWidth;
+        const totalSlides = slides.length;
+
+        function nextSlide() {
+            index = (index + 1) % totalSlides;
+            updateSlide();
+        }
+
+        function updateSlide() {
+            slider.style.transform = `translateX(-${index * slideWidth}px)`;
+        }
+
+        setInterval(nextSlide, 1000);
+    });
+</script>
+
+<body>
+    <div class="slider-container">
+        <div class="slider">
+            <img src="Calculo1.jfif" alt="Imagen 1">
+            <img src="Calculo2.jfif" alt="Imagen 2">
+            <img src="Calculo3.jfif" alt="Imagen 3">
+            <img src="Calculo4.jfif" alt="Imagen 4">
+            <img src="Calculo5.jfif" alt="Imagen 5">
+            <img src="" alt="Imagen 6">
+        </div>
+    </div>
+    <ul>
+        <button><a href="Proyecto.html">inicio</a></button>
+    </ul>
+    <h1>Calculo</h1>
+    <h2>ENERGIAS RENOVABLES Y SUS PORCENTAJES</h2>
+    <p>La energía asequible es una propuesta que busca asegurar el acceso a productos que contribuyan al proceso productivo sin consecuencias negativas. La energía asequible y no contaminante excluye cualquier tipo de contaminación, principalmente por emisión
+        de gases de efecto invernadero, como el CO2, causantes del cambio climático.Las energías renovables más seguras en términos de accidentes y contaminación atmosférica son la energía nuclear, la eólica, la hidroeléctrica y especialmente la solar,
+        y son opciones de baja emisión de carbono. Las energías limpias y renovables son:</p>
+    <h2>Tipos de energia</h2>
+    <p>Energía solar</p>
+    <p>Energía eolica</p>
+    <p>Energía hidráulica</p>
+    <p>Energía geotérmica</p>
+    <p>Energía biomasa</p>
+    <p>Energía nuclear</p>
+    <p> La energía solar representa el 99,7% de la energía utilizada en los procesos naturales de la Tierra. La energía eólica representó el 27% de la capacidad total de energía renovable en el mundo. Más del 55% de la energía limpia mundial es generada por
+        centrales hidroeléctricas. La energía geotérmica genera el 0,5% de la electricidad consumida en todo el mundo. La biomasa representa el 10% de la energía primaria mundial, incluidos los biocombustibles líquidos y el biogás. Mientras que la energía
+        nuclear representó alrededor del 10% de la electricidad generada en el mundo.</p>
+    <center>
+        <h1>Grafica de consumo de energías</h1>
+        <div class="bar-chart">
+            <div class="bar">
+                <div class="bar-label">Energía solar</div>
+                <div class="bar-value" style="width: 99.7%;"> 99,7%</div>
+            </div>
+            <div class="bar">
+                <div class="bar-label">Energía hidráulica</div>
+                <div class="bar-value" style="width: 55%; ">55%</div>
+            </div>
+            <div class="bar">
+                <div class="bar-label">Energía eolica</div>
+                <div class="bar-value" style="width: 27%; ">27%</div>
+            </div>
+            <div class="bar">
+                <div class="bar-label">Energía nuclear</div>
+                <div class="bar-value" style="width: 10%; ">10% </div>
+            </div>
+            <div class="bar">
+                <div class="bar-label">Energía biomasa</div>
+                <div class="bar-value" style="width: 10%; ">10%</div>
+            </div>
+            <div class="bar">
+                <div class="bar-label">Energía geotérmica</div>
+                <div class="bar-value" style="width: 0.5%; ">0,5%</div>
+            </div>
+    </center>
+
+</body>
+
+</html>

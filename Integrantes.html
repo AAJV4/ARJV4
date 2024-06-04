@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrantes</title>
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(fondo\ integrantes.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        table {
+            margin: 20px;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #000000;
+        }
+        
+        h1 {
+            color: #000000;
+        }
+        
+        form {
+            display: inline;
+            margin-bottom: 20px;
+        }
+        
+        input[type="text"],
+        textarea {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        
+        textarea {
+            width: 300px;
+            height: 100px;
+            resize: none;
+        }
+        
+        input[type="submit"],
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            background-color: #28a745;
+            color: #000000;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover,
+        button:hover {
+            background-color: #218838;
+        }
+        
+        .result {
+            margin-top: 20px;
+        }
+        
+        .Ejercicio {
+            width: 80%;
+            table-layout: fixed;
+            border-collapse: collapse;
+            empty-cells: hide;
+            margin: 0 auto;
+            font-size: 20px;
+            color: #000000;
+        }
+        
+        .Ejercicio th,
+        .Ejercicio td {
+            padding: 8px;
+            border: 1px solid #0099ff;
+        }
+        
+        .Ejercicio th:hover,
+        .Ejercicio tr:hover,
+        .Ejercicio td:hover {
+            background-color: rgb(193, 233, 235);
+        }
+        
+        .Ejercicio img {
+            width: 60px;
+            height: 90px;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin: 20px;
+        }
+
+        .clima, .container {
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente para mejorar la legibilidad */
+            padding: 20px;
+            border-radius: 8px;
+            width: 45%; /* Ajusta el tamaño según sea necesario */
+        }
+        #color{
+            background-color: rgb(193, 233, 235);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <h1>COMENTARIOS</h1>
+            <form id="miFormulario" onsubmit="return validarFormulario()">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre"><br><br>
+                <label for="comentarios">Comentarios:</label>
+                <textarea id="comentarios" name="comentarios"></textarea><br><br>
+                <button type="submit">Enviar</button>
+            </form>
+            <p id="mensaje"></p>
+        </div>
+        <div class="clima">
+            <h1>CLIMA</h1>
+            <form id="weatherForm">
+                <input type="text" id="city" placeholder="Ingresa el nombre de la ciudad" required>
+                <input type="submit" value="Buscar">
+            </form>
+            <div class="result" id="result"></div>
+        </div>
+    </div>
+    <div>
+        <button><a href="Proyecto.html">Inicio</a></button>
+        <h2 align="center">INTEGRANTES DEL EQUIPO</h2>
+        <center>
+            <table class="Ejercicio">
+                <thead>
+                    <tr id="color">
+                        <th>Nombre y edad de los integrantes</th>
+                        <th>Intereses y Habilidades</th>
+                        <th>Fotos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Rodriguez Angel, 16 años de edad</td>
+                        <td>Codigo e informacion de la materia C.P.W, se interesa en ser mejor programador e implementar nuevos codigos en sus programas</td>
+                        <td><img src="Roger.jfif" alt="Foto de Rodriguez Angel"></td>
+                    </tr>
+                    <tr>
+                        <td>Cardenas Alejandra, 16 años de edad</td>
+                        <td>Ayudo en codigo y decoracion del programa ademas hizo la informacion de las materias ingles y calculo, se interesa en aprender mas sobre programacion y hacer mejores programas</td>
+                        <td><img src="Ale.jfif" alt="Foto de Cardenas Alejandra"></td>
+                    </tr>
+                    <tr>
+                        <td>Martin del campo Vianney, 16 años de edad</td>
+                        <td>Ayudo en decoracion y dio la informacion de la materia de Ecologia, se interesa en aprender sobre programacion y codigos</td>
+                        <td><img src="Vianney.jfif" alt="Foto de Martin del campo Vianney"></td>
+                    </tr>
+                    <tr>
+                        <td>Mata Josue, 17 años de edad</td>
+                        <td>Ayudo en el codigo y dio la informacion de la materia de Fisica, se interesa en saber mas sobre programacion</td>
+                        <td><img src="Mata.jfif" alt="Foto de Mata Josue"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+    </div>
+    <script>
+        document.getElementById('weatherForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const city = document.getElementById('city').value;
+            const apiKey = 'c3c226c9eac62670595178844431b9cc';
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=es`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.cod === 200) {
+                        const resultDiv = document.getElementById('result');
+                        const temp = data.main.temp;
+                        const humidity = data.main.humidity;
+                        const windSpeed = data.wind.speed;
+                        const windDeg = data.wind.deg;
+                        const description = data.weather[0].description;
+
+                        resultDiv.innerHTML = `
+                            <h2>Clima en ${city}</h2>
+                            <p><strong>Temperatura:</strong> ${temp}°C</p>
+                            <p><strong>Humedad:</strong> ${humidity}%</p>
+                            <p><strong>Descripción:</strong> ${description}</p>
+                            <p><strong>Velocidad del viento:</strong> ${windSpeed} m/s</p>
+                            <p><strong>Orientación del viento:</strong> ${windDeg}°</p>
+                        `;
+                    } else {
+                        document.getElementById('result').innerHTML = `<p>No se encontró la ciudad. Por favor, intenta nuevamente.</p>`;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching the weather data:', error);
+                    document.getElementById('result').innerHTML = `<p>Ocurrió un error al obtener los datos del clima. Por favor, intenta nuevamente más tarde.</p>`;
+                });
+        });
+
+        function validarFormulario() {
+            // Obtener los valores de los campos de entrada
+            var nombre = document.getElementById("nombre").value;
+            var comentarios = document.getElementById("comentarios").value;
+
+            // Verificar si los campos están vacíos
+            if (nombre === "") {
+                mostrarMensaje("Por favor, ingresa tu nombre.");
+                return false;
+            } else if (comentarios === "") {
+                mostrarMensaje("Por favor, ingresa tus comentarios.");
+                return false;
+            }
+
+            // Si todos los campos son válidos, mostrar un mensaje de éxito
+            mostrarMensaje("Agradecemos tus comentarios, " + nombre + "!");
+            return false; // Evitar que el formulario se envíe de forma predeterminada
+        }
+
+        function mostrarMensaje(mensaje) {
+            // Mostrar el mensaje en el elemento con el id "mensaje"
+            document.getElementById("mensaje").innerHTML = mensaje;
+
+            // Después de 3 segundos, borrar el mensaje
+            setTimeout(function() {
+                document.getElementById("mensaje").innerHTML = "";
+            }, 3000); // 3000 milisegundos = 3 segundos
+        }
+    </script>
+</body>
+</html>

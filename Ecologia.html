@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecologia</title>
+</head>
+<style>
+    body {
+        color: white;
+        background-image: url(im1.jfif);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    
+    .slider-container {
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+    
+    .slider img {
+        width: 35%;
+        height: auto;
+    }
+</style>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0;
+        padding: 20px;
+    }
+    
+    .bar-chart {
+        width: 80%;
+        max-width: 800px;
+    }
+    
+    .bar {
+        display: flex;
+        align-items: center;
+        margin: 10px 0;
+    }
+    
+    .bar-label {
+        width: 150px;
+        text-align: right;
+        margin-right: 10px;
+    }
+    
+    .bar-value {
+        height: 30px;
+        background-color: #76b5c5;
+        text-align: right;
+        padding-right: 5px;
+        color: rgb(0, 0, 0);
+        display: flex;
+        align-items: center;
+    }
+    button{
+        padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const slider = document.querySelector('.slider');
+        const slides = document.querySelectorAll('.slider img');
+        let index = 0;
+        const slideWidth = slides[0].clientWidth;
+        const totalSlides = slides.length;
+
+        function nextSlide() {
+            index = (index + 1) % totalSlides;
+            updateSlide();
+        }
+
+        function updateSlide() {
+            slider.style.transform = `translateX(-${index * slideWidth}px)`;
+        }
+
+        setInterval(nextSlide, 1000);
+    });
+</script>
+
+<body>
+    <div class="slider-container">
+        <div class="slider">
+            <img src="Ecologia1.jpg" alt="imagen1">
+            <img src="Ecologia2.jpg" alt="imagen2">
+            <img src="Ecologia3.jpg" alt="imagen3">
+            <img src="Ecologia4.jpg" alt="imagen4">
+            <img src="Ecologia5.jpg" alt="imagen5">
+            <img src="Ecologia6.jpg" alt="imagen6">
+        </div>
+    </div>
+    <ul>
+        <button><a href="Proyecto.html">inicio</a></button>
+    </ul>
+    <h2>Ecologia</h2>
+    <h2>Las cuidades mas pobladas del mundo</h2>
+    <p>Tokio, Japón: 37,435,191 habitantes</p>
+    <p>Nueva Delhi, India: 32,941,309 habitantes</p>
+    <p>Shanghái, China: 29,210,808 habitantes</p>
+    <p>Dhaka, Bangladesh: 23,209,616 habitantes</p>
+    <p>São Paulo, Brasil: 22,619,736 habitantes</p>
+    <p>Ciudad de México, México: 22,08 millones de habitantes</p>
+    <p>El Cairo, Egipto: 21,75 millones de habitantes</p>
+    <p>Pekín, China: 21,33 millones de habitantes</p>
+    <p>Bombay, India: 20,96 millones de habitantes</p>
+    <p>Osaka, Japón: 19,06 millones de habitantes</p>
+    <p>Si bien se espera que este número aumente dos tercios para 2050, los desafíos urbanos están creciendo exponencialmente, por lo que es más crucial que nunca adaptar nuestras ciudades. Anualmente, la revisión de la población mundial evalúa el crecimiento
+        de las ciudades y la cantidad de residentes que viven en áreas metropolitanas para comprender las tendencias de evolución global. En 2022, la lista de los 20 países más poblados se mantuvo similar a la edición de 2021, con un ligero cambio en
+        números y posiciones. Tokio mantuvo su estatus como la ciudad más grande del mundo,</p>
+    <p>Comparando los resultados con la edición de 2021, la única disminución que se puede ver en el top 20 involucra a las dos ciudades japonesas, Tokio y Osaka. El resto de la lista tuvo, en promedio, un crecimiento del 1,8% en el total de personas residentes
+        en áreas metropolitanas. De hecho, las ciudades africanas Kinshasa en la República Democrática del Congo y Lagos en Nigeria registraron las tasas más altas, con un aumento de residentes del 4,39 % y del 3,54 %, respectivamente, en 1 año. La ciudad
+        más grande del continente americano sigue siendo Sao Paulo en Brasil, seguida de cerca por Ciudad de México y por Buenos Aires en Argentina más abajo en la tabla. En Europa, Estambul es la más poblada, con más de 14,5 millones de habitantes.</p>
+    <center>
+        <h1>Ranking de las Ciudades Más Pobladas</h1>
+        <div class="bar-chart">
+            <div class="bar">
+                <div class="bar-label">Tokio, Japón</div>
+                <div class="bar-value" style="width: 37.4%;">37.4M</div>
+            </div>
+            <div class="bar">
+                <div class="bar-label">Delhi, India</div>
+                <div class="bar-value" style="width: 32.9%; ">32.9M</div>
+            </div>
+            <div class="bar">
+                <div class="bar-label">Shanghái, China</div>
+                <div class="bar-value" style="width: 29.2%; ">29.2M</div>
+            </div>
+            <div class="bar">
+                <div class="bar-label">Dhaka, Bangladesh</div>
+                <div class="bar-value" style="width: 23.2%; ">23.2M</div>
+            </div>
+            <div class="bar">
+                <div class="bar-label">São Paulo, Brasil</div>
+                <div class="bar-value" style="width: 22.6%; ">22.6M</div>
+            </div>
+            <div class="bar">
+                <div class="bar-label">Ciudad de Mexico, Mexico</div>
+                <div class="bar-value" style="width: 22%; ">22.08M</div>
+            </div>
+            <div class="bar">
+                <div class="bar-label">El Cairo, Egipto</div>
+                <div class="bar-value" style="width: 21.7%; ">21.7M</div>
+            </div>
+            <div class="bar">
+                <div class="bar-label">Pekin, China</div>
+                <div class="bar-value" style="width: 21.3%; ">21.3M</div>
+            </div>
+            <div class="bar">
+                <div class="bar-label">Bombay, India</div>
+                <div class="bar-value" style="width: 20.9%; ">20.9M</div>
+            </div>
+            <div class="bar">
+                <div class="bar-label">Osaka, Japón</div>
+                <div class="bar-value" style="width: 19%; ">19.06M</div>
+            </div>
+        </div>
+    </center>
+
+</body>
+
+</html>
